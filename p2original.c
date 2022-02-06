@@ -1,34 +1,32 @@
 #include<stdio.h>
-int input_n()
-{
-  int n;
-  printf("enter the numbers :\n");
-  scanf("%d" ,&n);
-  return n;
-}
-int sum_n(int n)
-{
-  int i,sum=0;
-  for(i=1;i<=n;i++)
-  {
-    sum=sum+i;
-  }
-  return sum;
-}
-void output (int sum,int n)
-{
-  int j;
-  for(j=1;j<n;j++)
-  {
-    printf("%d+" ,j);
-  }
-   printf("%d is %d" ,j,sum);
-}
+int input();
+int cmp(int a,int b,int c);
 int main()
 {
-  int n,sum,i;
-  n=input_n();
-  sum =sum_n(n);
-  output(sum,n);
+  printf("enter 3 numbers \n");
+  int a,b,c,l ;
+  a=input();
+  b=input();
+  c=input();
+  l=cmp(a,b,c);
+  printf("the greatest of %d ,%d and %d , %d \n" ,a,b,c,l);
+  return 0;
+}
+int input()
+{
+  int i;
+  scanf("%d" ,&i);
+  return i;
+}
+int cmp(int a,int b,int c)
+{
+  if((a>b) &&(a>c))
+  return a;
+  else
+  if((b>a)&&(b<c))
+  return b;
+  else
+  if((c>a) &&(c<b))
+  return c;
 }
 
